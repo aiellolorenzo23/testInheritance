@@ -1,4 +1,4 @@
-package test.common.inheritance.entity;
+package test.common.inheritance.entity.main;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

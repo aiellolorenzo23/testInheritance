@@ -1,18 +1,18 @@
 package test.common.inheritance.controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import test.common.inheritance.entity.Book;
-import test.common.inheritance.entity.MyProduct;
-import test.common.inheritance.entity.Pen;
-import test.common.inheritance.repository.BookRepository;
-import test.common.inheritance.repository.MyProductRepository;
-import test.common.inheritance.repository.PenRepository;
+import test.common.inheritance.entity.sons.Book;
+import test.common.inheritance.entity.main.MyProduct;
+import test.common.inheritance.entity.sons.Pen;
+import test.common.inheritance.repository.sons.BookRepository;
+import test.common.inheritance.repository.main.MyProductRepository;
+import test.common.inheritance.repository.sons.PenRepository;
 
 import java.util.List;
 
@@ -46,8 +46,7 @@ public class ProductsController {
         Book book = new Book();
         book.setName("Libro di sicurezzo");
         book.setAuthor("Synergo");
-        log.info("book author: "+myProductRepository.save(book).getAuthor());
-        return ResponseEntity.ok().body(myProductRepository.save(book));
+        return ResponseEntity.ok().body(bookRepository.save(book));
     }
 
     @Operation(description = "insertPen")
@@ -57,7 +56,6 @@ public class ProductsController {
         Pen pen = new Pen();
         pen.setName("Penna di sicurezzo");
         pen.setColor("Gialla");
-        log.info("pen color: "+myProductRepository.save(pen).getColor());
         return ResponseEntity.ok().body(penRepository.save(pen));
     }
 
