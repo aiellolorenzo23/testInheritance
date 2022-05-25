@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import test.common.inheritance.entity.main.Alphabet;
-import test.common.inheritance.entity.main.MyProduct;
 import test.common.inheritance.entity.main.StrangerAlphabet;
-import test.common.inheritance.entity.sons.Book;
 import test.common.inheritance.repository.main.AlphabetRepository;
 import test.common.inheritance.repository.main.StrangerAlphabetRepository;
 
